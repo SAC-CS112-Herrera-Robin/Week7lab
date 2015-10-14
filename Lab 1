@@ -1,0 +1,32 @@
+import javax.swing.JOptionPane;
+
+public class GUIguess {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int random, guess;
+		int min=1 , max=10;
+		String high="Your guess is too high.";
+		String low="Your guess is too low.";
+		random = min+(int)(Math.random()*max);
+		String sString,message;
+		
+		guess= Integer.parseInt(JOptionPane.showInputDialog("Guess a number between 1 and 10"));
+		
+		if(guess>max||guess<min){
+			message=String.format("%d is not a number between 1 and 10",guess);
+			JOptionPane.showMessageDialog(null, message);
+			}
+		else{
+			if (guess==random)
+				JOptionPane.showMessageDialog(null, "You guess right!");
+			
+			else{ sString= (guess>random)? high:low;
+					message=String.format("%s\n Nope, you lose.", sString);
+					JOptionPane.showMessageDialog(null, message);
+		
+		
+			}	
+	}
+		}
+}
